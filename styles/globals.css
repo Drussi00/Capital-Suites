@@ -3,34 +3,9 @@
   src: url(./fonts/CooperFiveOpti-Black.otf);
 }
 
-.mercadopago-button {
-  width: 100%;
-  background: black !important;
+.MuiSvgIcon-root.MuiSvgIcon-fontSizeSmall {
+  margin-right: 20px;
 }
-
-.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-12.MuiGrid-grid-md-6 {
-  padding-top: 0;
-}
-.bottomH1 {
-  font-family: cooper !important;
-}
-
-body {
-  background-color: #000000;
-}
-
-.title.MuiListItem-root.MuiListItem-gutters.MuiListItem-padding {
-  justify-content: center;
-}
-.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.MuiSelect-icon.MuiSelect-iconOutlined {
-  color: #000000;
-}
-
-.MuiOutlinedInput-root.MuiInputBase-root.MuiInputBase-colorPrimary.borrarFieldet
-  fieldset {
-  display: none;
-}
-
 .dropdown-toggle.btn {
   border: none;
   width: 100%;

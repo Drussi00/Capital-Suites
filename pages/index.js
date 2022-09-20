@@ -1,13 +1,10 @@
 import { CircularProgress, Alert, Box } from "@mui/material";
 import Layout from "../components/Layout";
-import client from "../utils/client";
 import { useState, useEffect } from "react";
-import Favoritos from "../components/Favoritos";
-import ProductosIndex from "../components/ProductosIndex";
-
 import Categories from "../components/Categories";
-import Influencer from "../components/Influencer";
-import Newsletter from "../components/Newsletter";
+import Banner from "../components/Banner";
+import Orlando from "../components/Orlando";
+import Habitaciones from "../components/Habitaciones";
 
 export default function Home() {
   const [state, setState] = useState({
@@ -15,30 +12,12 @@ export default function Home() {
     error: "",
     loading: true,
   });
-  // const [, setimages] = useState({ images: [] });
-  const { loading, error, products } = state;
-  const favorito = products.filter((product) => product.favorito === "si");
+
+  const { loading, error } = state;
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const products = await client.fetch(`*[_type == 'product']`);
-        // const images = await client.fetch(`*[_type == 'images']`);
-        // setimages(images);
-        setState({ products, loading: false });
-      } catch (error) {
-        setState({ loading: false, error: error.message });
-      }
-    };
-    fetchData();
+    setState({ loading: false });
   }, []);
-  const filteredT = products.filter(
-    (product) => product.category === "T-Shirt"
-  );
-  const filteredH = products.filter(
-    (product) => product.category === "Hoodies"
-  );
-  const filteredC = products.filter((product) => product.category === "Cargo");
-  const filteredS = products.filter((product) => product.category === "Shorts");
 
   return (
     <Layout>
@@ -47,14 +26,30 @@ export default function Home() {
       ) : error ? (
         <Alert variant="danger">{error}</Alert>
       ) : (
-        <Box
-          sx={{
-            paddingTop: "50px",
-            paddingBottom: "50px",
-            backgroundColor: "#CCAE93",
-          }}
-        >
-          <Categories />
+        <Box>
+          <Box
+            sx={{
+              paddingBottom: "50px",
+              backgroundColor: "#CCAE93",
+            }}
+          >
+            <Box>
+              <Banner />
+            </Box>
+            <Box
+              sx={{
+                paddingTop: "50px",
+              }}
+            >
+              <Categories />
+            </Box>
+            <Box paddingTop={10}>
+              <Habitaciones />
+            </Box>
+          </Box>
+          <Box sx={{ backgroundColor: "white" }}>
+            <Orlando />
+          </Box>
         </Box>
       )}
     </Layout>

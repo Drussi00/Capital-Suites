@@ -7,8 +7,12 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import nuddy from "/utils/Images/nuddy.png";
+import first from "/utils/Images/1.jpg";
+import second from "/utils/Images/2.jpg";
+import third from "/utils/Images/3.jpg";
+import fourth from "/utils/Images/4.jpg";
+
 import React from "react";
-import classes from "../utils/classes";
 
 export default function Categories() {
   const isDesktop = useMediaQuery("(min-width:600px)");
@@ -48,8 +52,8 @@ export default function Categories() {
               it? It is a long established fact that a reader will be distracted
               by the readable content of a page when looking at its layout. The
               point of using Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters, as opposed to using 'Content here,
-              content here', making it look like readable English.
+              distribution of letters, as opposed to using Content here, content
+              here, making it look like readable English.
             </Typography>
           </Box>
         </Box>
@@ -70,7 +74,7 @@ export default function Categories() {
               <Grid container spacing={2} sx={{ justifyContent: "center" }}>
                 <Grid item>
                   <img
-                    src="https://i.etsystatic.com/30139968/c/1981/1581/0/102/il/8d9b27/3121799274/il_340x270.3121799274_8kd9.jpg"
+                    src={first.src}
                     style={{
                       width: isDesktop ? "320px" : "334px",
                       height: "250px",
@@ -79,7 +83,7 @@ export default function Categories() {
                 </Grid>
                 <Grid item>
                   <img
-                    src="https://i.etsystatic.com/30139968/c/1981/1581/0/102/il/8d9b27/3121799274/il_340x270.3121799274_8kd9.jpg"
+                    src={second.src}
                     style={{
                       width: isDesktop ? "320px" : "340px",
                       height: "250px",
@@ -88,7 +92,7 @@ export default function Categories() {
                 </Grid>
                 <Grid item>
                   <img
-                    src="https://i.etsystatic.com/30139968/c/1981/1581/0/102/il/8d9b27/3121799274/il_340x270.3121799274_8kd9.jpg"
+                    src={third.src}
                     style={{
                       width: isDesktop ? "320px" : "340px",
                       height: "250px",
@@ -97,7 +101,7 @@ export default function Categories() {
                 </Grid>
                 <Grid item>
                   <img
-                    src="https://i.etsystatic.com/30139968/c/1981/1581/0/102/il/8d9b27/3121799274/il_340x270.3121799274_8kd9.jpg"
+                    src={fourth.src}
                     style={{
                       width: isDesktop ? "320px" : "340px",
                       height: "250px",
@@ -113,11 +117,12 @@ export default function Categories() {
             sx={{
               backgroundColor: "white",
               borderRadius: "0",
-              textDecoration: "none",
               width: "20%",
+              textTransform: "none",
+              fontWeight: "bold",
             }}
           >
-            Conoce mas{" "}
+            Conoce mas
           </Button>
         </Box>
       </Container>
