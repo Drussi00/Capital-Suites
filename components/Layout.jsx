@@ -60,7 +60,7 @@ export default function Layout({ title, description, children }) {
   return (
     <>
       <Head>
-        <title>{title ? `${title} - Nuddy minds` : "Nuddy minds"}</title>
+        <title>{title ? `${title} - Kapital Suites` : "Kapital Suites"}</title>
         {description && <meta name="description" content={description}></meta>}
       </Head>
       <ThemeProvider theme={theme}>
@@ -198,7 +198,7 @@ export default function Layout({ title, description, children }) {
                 <Typography align="justify">All rights reserved. </Typography>
               </Box>
               <Box>
-                <Typography align="justify"> Nuddy minds.</Typography>
+                <Typography align="justify"> Kapital Suites.</Typography>
               </Box>
             </Box>
             <Box>

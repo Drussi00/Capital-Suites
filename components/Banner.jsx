@@ -22,8 +22,10 @@ const Banner = () => {
           position: "absolute",
           fontFamily: "mont",
           fontStyle: "normal",
-          right: "33%",
-          top: "25%",
+          left: "50%",
+          transform: " translate(-50%, -50%)",
+
+          top: "35%",
           color: "white",
           fontSize: "5.5rem",
         }}
@@ -37,7 +39,8 @@ const Banner = () => {
           position: "absolute",
           fontFamily: "mont",
           fontStyle: "normal",
-          right: "37%",
+          left: "50%",
+          transform: " translate(-50%, -50%)",
           top: "75%",
           color: "white",
           fontSize: "1.5rem",

@@ -60,15 +60,24 @@ export default function Categories() {
         <Box>
           <Grid container spacing={2} sx={{ justifyContent: "center" }}>
             <Grid item className="nuddyBear">
-              <img
-                src={nuddy.src}
-                style={{
-                  display: "flex",
-
-                  width: isDesktop ? "410px" : "100%",
-                  height: "520px",
-                }}
-              />
+              <div class="mapouter">
+                <div class="mapouter">
+                  <div class="gmap_canvas">
+                    <iframe
+                      width="410"
+                      height="520"
+                      id="gmap_canvas"
+                      src="https://maps.google.com/maps?q=4.808833260534765,%20-75.6910292014792&t=&z=19&ie=UTF8&iwloc=&output=embed"
+                      frameborder="0"
+                      scrolling="no"
+                      marginheight="0"
+                      marginwidth="0"
+                    ></iframe>
+                    <a href="https://123movies-to.org"></a>
+                    <a href="https://www.embedgooglemap.net"></a>
+                  </div>
+                </div>
+              </div>
             </Grid>
             <Grid item md={7}>
               <Grid container spacing={2} sx={{ justifyContent: "center" }}>
