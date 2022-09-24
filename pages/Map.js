@@ -16,11 +16,12 @@ export default function Map() {
 function MapG() {
   const center = useMemo(
     () => ({
-      lat: 4.809030035757831,
-      lng: -75.69094167161828,
+      lat: 4.808837142795659,
+      lng: -75.69102186023339,
     }),
     []
   );
+
   return (
     <GoogleMap
       mapContainerStyle={{ height: "500px", width: "800px" }}
