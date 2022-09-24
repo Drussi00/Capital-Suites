@@ -2,6 +2,13 @@
   font-family: cooper;
   src: url(./fonts/CooperFiveOpti-Black.otf);
 }
+.map-container {
+  width: 100%;
+  height: 100vh;
+}
+#__next {
+  position: absolute;
+}
 
 .MuiSvgIcon-root.MuiSvgIcon-fontSizeSmall {
   margin-right: 20px;

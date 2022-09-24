@@ -17,6 +17,7 @@
     "@mui/material": "^5.4.1",
     "@mui/styles": "^5.4.1",
     "@paypal/react-paypal-js": "^7.8.1",
+    "@react-google-maps/api": "^2.13.1",
     "@sanity/client": "^3.0.6",
     "@sanity/image-url": "^1.0.1",
     "axios": "^0.26.0",
@@ -32,6 +33,7 @@
     "react": "17.0.2",
     "react-bootstrap": "^2.4.0",
     "react-dom": "17.0.2",
+    "react-google-maps": "^9.4.5",
     "react-hook-form": "^7.34.0",
     "react-mailchimp-subscribe": "^2.1.3"
   },
