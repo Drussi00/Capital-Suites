@@ -64,7 +64,7 @@ export default function Categories() {
                 <div>
                   <div>
                     <iframe
-                      width={isDesktop ? "410Px" : "700px"}
+                      width={isDesktop ? "410Px" : "650px"}
                       height="520"
                       id="gmap_canvas"
                       src="https://maps.google.com/maps?q=4.808833260534765,%20-75.6910292014792&t=&z=19&ie=UTF8&iwloc=&output=embed"
