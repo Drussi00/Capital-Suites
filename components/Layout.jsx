@@ -81,28 +81,41 @@ export default function Layout({ title, description, children }) {
             className="appbar"
           >
             <Toolbar sx={{ ...classes.toolbar, backgroundColor: "black" }}>
-              <IconButton
-                edge="start"
-                aria-label="open drawer"
-                onClick={sidebarOpenHandler}
-              >
-                <MenuIcon sx={{ color: "white" }} />
-              </IconButton>
-              <Drawer
-                sx={{
-                  maxWidth: "250px",
-                  backgroundColor: "white",
-                  zIndex: "1",
-                }}
-                anchor="left"
-                open={sidbarVisible}
-                onClose={sidebarCloseHandler}
-              >
-                <Box sx={{ width: "250px", backgroundColor: "white" }}></Box>
-              </Drawer>
-
+              <Box display="flex" justifyContent="center">
+                <IconButton
+                  sx={{ display: isDesktop ? "none" : null }}
+                  edge="start"
+                  aria-label="open drawer"
+                  onClick={sidebarOpenHandler}
+                >
+                  <MenuIcon sx={{ color: "white" }} />
+                </IconButton>
+                <Drawer
+                  sx={{
+                    maxWidth: "250px",
+                    backgroundColor: "white",
+                    zIndex: "1",
+                  }}
+                  anchor="left"
+                  open={sidbarVisible}
+                  onClose={sidebarCloseHandler}
+                >
+                  <Box sx={{ width: "250px", backgroundColor: "white" }}></Box>
+                </Drawer>
+                <Box display={isDesktop ? "none" : null}>
+                  <img
+                    src={logo.src}
+                    style={{
+                      display: "flex",
+                      marginLeft: isDesktop ? "0" : "80px",
+                      width: "150px",
+                      height: "80px",
+                    }}
+                  />
+                </Box>
+              </Box>
               <Box
-                display="flex"
+                display={isDesktop ? "flex" : "none"}
                 alignItems="center"
                 justifyContent="space-around"
                 sx={{ width: "100%" }}

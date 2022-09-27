@@ -64,8 +64,8 @@ export default function Categories() {
                 <div>
                   <div>
                     <iframe
-                      width={isDesktop ? "410Px" : "650px"}
-                      height="520"
+                      width={isDesktop ? "410Px" : "390px"}
+                      height={isDesktop ? "520px" : "400px"}
                       id="gmap_canvas"
                       src="https://maps.google.com/maps?q=4.808833260534765,%20-75.6910292014792&t=&z=19&ie=UTF8&iwloc=&output=embed"
                       scrolling="no"
@@ -83,7 +83,7 @@ export default function Categories() {
                     src={first.src}
                     style={{
                       width: isDesktop ? "320px" : "100%",
-                      height: isDesktop ? "250px" : "250px",
+                      height: isDesktop ? "250px" : "200px",
                     }}
                   />
                 </Grid>
@@ -92,7 +92,7 @@ export default function Categories() {
                     src={second.src}
                     style={{
                       width: isDesktop ? "320px" : "100%",
-                      height: isDesktop ? "250px" : "250px",
+                      height: isDesktop ? "250px" : "200px",
                     }}
                   />
                 </Grid>
@@ -101,7 +101,7 @@ export default function Categories() {
                     src={third.src}
                     style={{
                       width: isDesktop ? "320px" : "100%",
-                      height: isDesktop ? "250px" : "250px",
+                      height: isDesktop ? "250px" : "200px",
                     }}
                   />
                 </Grid>
@@ -110,7 +110,7 @@ export default function Categories() {
                     src={fourth.src}
                     style={{
                       width: isDesktop ? "320px" : "100%",
-                      height: isDesktop ? "250px" : "250px",
+                      height: isDesktop ? "250px" : "200px",
                     }}
                   />
                 </Grid>

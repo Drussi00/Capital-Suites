@@ -1,9 +1,17 @@
-import { Grid, Box, Container, Typography, Button } from "@mui/material";
+import {
+  Grid,
+  Box,
+  Container,
+  Typography,
+  Button,
+  useMediaQuery,
+} from "@mui/material";
 import React from "react";
 import orlando from "../utils/Images/orlando.png";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 const Orlando = () => {
+  const isDesktop = useMediaQuery("(min-width:600px)");
   return (
     <Container>
       <Grid container>
@@ -11,8 +19,8 @@ const Orlando = () => {
           <img
             src={orlando.src}
             style={{
-              margin: "60px",
-              width: "600px",
+              margin: isDesktop ? "60px" : "0",
+              width: isDesktop ? "600px" : "100%",
               height: "420px",
             }}
           />
