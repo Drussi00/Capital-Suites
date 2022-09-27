@@ -59,19 +59,16 @@ export default function Categories() {
         </Box>
         <Box>
           <Grid container spacing={2} sx={{ justifyContent: "center" }}>
-            <Grid item className="nuddyBear">
-              <div className="mapouter">
-                <div className="mapouter">
-                  <div className="gmap_canvas">
+            <Grid item>
+              <div>
+                <div>
+                  <div>
                     <iframe
-                      width="410"
+                      width={isDesktop ? "410Px" : "700px"}
                       height="520"
                       id="gmap_canvas"
                       src="https://maps.google.com/maps?q=4.808833260534765,%20-75.6910292014792&t=&z=19&ie=UTF8&iwloc=&output=embed"
-                      frameBorder="0"
                       scrolling="no"
-                      marginHeight="0"
-                      marginWidth="0"
                     ></iframe>
                     <a href="https://123movies-to.org"></a>
                     <a href="https://www.embedgooglemap.net"></a>
@@ -79,41 +76,41 @@ export default function Categories() {
                 </div>
               </div>
             </Grid>
-            <Grid item md={7}>
+            <Grid item md={7} sm={12} xs={12}>
               <Grid container spacing={2} sx={{ justifyContent: "center" }}>
-                <Grid item>
+                <Grid item sm={6} xs={6}>
                   <img
                     src={first.src}
                     style={{
-                      width: isDesktop ? "320px" : "334px",
-                      height: "250px",
+                      width: isDesktop ? "320px" : "100%",
+                      height: isDesktop ? "250px" : "250px",
                     }}
                   />
                 </Grid>
-                <Grid item>
+                <Grid item sm={6} xs={6}>
                   <img
                     src={second.src}
                     style={{
-                      width: isDesktop ? "320px" : "340px",
-                      height: "250px",
+                      width: isDesktop ? "320px" : "100%",
+                      height: isDesktop ? "250px" : "250px",
                     }}
                   />
                 </Grid>
-                <Grid item>
+                <Grid item sm={6} xs={6}>
                   <img
                     src={third.src}
                     style={{
-                      width: isDesktop ? "320px" : "340px",
-                      height: "250px",
+                      width: isDesktop ? "320px" : "100%",
+                      height: isDesktop ? "250px" : "250px",
                     }}
                   />
                 </Grid>
-                <Grid item>
+                <Grid item sm={6} xs={6}>
                   <img
                     src={fourth.src}
                     style={{
-                      width: isDesktop ? "320px" : "340px",
-                      height: "250px",
+                      width: isDesktop ? "320px" : "100%",
+                      height: isDesktop ? "250px" : "250px",
                     }}
                   />
                 </Grid>
@@ -123,10 +120,12 @@ export default function Categories() {
         </Box>
         <Box display="flex" justifyContent="center" paddingTop={5}>
           <Button
+            size="large"
             sx={{
               backgroundColor: "white",
               borderRadius: "0",
-              width: "20%",
+              width: isDesktop ? "20%" : "80%",
+
               textTransform: "none",
               fontWeight: "bold",
             }}

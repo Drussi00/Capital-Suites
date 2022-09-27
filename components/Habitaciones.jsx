@@ -5,6 +5,7 @@ import {
   List,
   ListItem,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import React, { useState } from "react";
 import cuartos1 from "../utils/Images/Cuartos/1.jpg";
@@ -21,6 +22,7 @@ const Habitaciones = () => {
     blanco4: false,
   });
   const { cuartos, blanco1, blanco2, blanco3, blanco4 } = cuarto;
+  const isDesktop = useMediaQuery("(min-width:600px)");
   return (
     <Container>
       <Box>
@@ -208,7 +210,11 @@ const Habitaciones = () => {
             </List>
           </Grid>
           <Grid md={8} item>
-            <img src={cuartos?.src} width="800px" height="553px" />
+            <img
+              src={cuartos?.src}
+              width={isDesktop ? "800px" : "100%"}
+              height="553px"
+            />
           </Grid>
         </Grid>
       </Box>
