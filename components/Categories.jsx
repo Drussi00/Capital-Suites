@@ -6,7 +6,7 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import nuddy from "/utils/Images/nuddy.png";
+
 import first from "/utils/Images/1.jpg";
 import second from "/utils/Images/2.jpg";
 import third from "/utils/Images/3.jpg";
@@ -60,18 +60,18 @@ export default function Categories() {
         <Box>
           <Grid container spacing={2} sx={{ justifyContent: "center" }}>
             <Grid item className="nuddyBear">
-              <div class="mapouter">
-                <div class="mapouter">
-                  <div class="gmap_canvas">
+              <div className="mapouter">
+                <div className="mapouter">
+                  <div className="gmap_canvas">
                     <iframe
                       width="410"
                       height="520"
                       id="gmap_canvas"
                       src="https://maps.google.com/maps?q=4.808833260534765,%20-75.6910292014792&t=&z=19&ie=UTF8&iwloc=&output=embed"
-                      frameborder="0"
+                      frameBorder="0"
                       scrolling="no"
-                      marginheight="0"
-                      marginwidth="0"
+                      marginHeight="0"
+                      marginWidth="0"
                     ></iframe>
                     <a href="https://123movies-to.org"></a>
                     <a href="https://www.embedgooglemap.net"></a>

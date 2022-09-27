@@ -1,8 +1,9 @@
-import { Button, Typography } from "@mui/material";
+import { Button, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import principal from "../utils/Images/principal.png";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 const Banner = () => {
+  const isDesktop = useMediaQuery("(min-width:600px)");
   return (
     <div
       style={{
@@ -14,7 +15,7 @@ const Banner = () => {
         src={principal.src}
         style={{
           width: "100%",
-          maxHeight: "50vw",
+          height: isDesktop ? "50vw" : "500px",
         }}
       />
       <Typography
@@ -27,7 +28,7 @@ const Banner = () => {
 
           top: "35%",
           color: "white",
-          fontSize: "5.5rem",
+          fontSize: isDesktop ? "5.5rem" : "2.2rem",
         }}
         variant="h1"
         component="h1"
@@ -43,10 +44,10 @@ const Banner = () => {
           transform: " translate(-50%, -50%)",
           top: "75%",
           color: "white",
-          fontSize: "1.5rem",
+          fontSize: isDesktop ? "1.5rem" : "1.1rem",
           borderRadius: "0",
           backgroundColor: "#B18C6B",
-          width: "350px",
+          width: isDesktop ? "30%" : "70%",
           textTransform: "none",
         }}
       >

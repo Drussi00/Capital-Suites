@@ -8,13 +8,15 @@ import {
   Container,
   CssBaseline,
   Divider,
+  Drawer,
+  IconButton,
   Link,
   ThemeProvider,
   Toolbar,
   Typography,
   useMediaQuery,
 } from "@mui/material";
-
+import MenuIcon from "@mui/icons-material/Menu";
 import Head from "next/head";
 import NextLink from "next/link";
 import classes from "../utils/classes";
@@ -22,6 +24,7 @@ import classes from "../utils/classes";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
+import { useState } from "react";
 
 ////////////////////////////////////////////////////////////////
 export default function Layout({ title, description, children }) {
@@ -56,7 +59,13 @@ export default function Layout({ title, description, children }) {
   });
 
   const isDesktop = useMediaQuery("(min-width:600px)");
-
+  const [sidbarVisible, setSidebarVisible] = useState(false);
+  const sidebarOpenHandler = () => {
+    setSidebarVisible(true);
+  };
+  const sidebarCloseHandler = () => {
+    setSidebarVisible(false);
+  };
   return (
     <>
       <Head>
@@ -72,6 +81,26 @@ export default function Layout({ title, description, children }) {
             className="appbar"
           >
             <Toolbar sx={{ ...classes.toolbar, backgroundColor: "black" }}>
+              <IconButton
+                edge="start"
+                aria-label="open drawer"
+                onClick={sidebarOpenHandler}
+              >
+                <MenuIcon sx={{ color: "white" }} />
+              </IconButton>
+              <Drawer
+                sx={{
+                  maxWidth: "250px",
+                  backgroundColor: "white",
+                  zIndex: "1",
+                }}
+                anchor="left"
+                open={sidbarVisible}
+                onClose={sidebarCloseHandler}
+              >
+                <Box sx={{ width: "250px", backgroundColor: "white" }}></Box>
+              </Drawer>
+
               <Box
                 display="flex"
                 alignItems="center"
