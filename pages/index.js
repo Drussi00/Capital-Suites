@@ -5,6 +5,7 @@ import Categories from "../components/Categories";
 import Banner from "../components/Banner";
 import Orlando from "../components/Orlando";
 import Habitaciones from "../components/Habitaciones";
+import client from "../utils/client";
 
 export default function Home() {
   const [state, setState] = useState({
@@ -14,9 +15,17 @@ export default function Home() {
   });
 
   const { loading, error } = state;
-
   useEffect(() => {
-    setState({ loading: false });
+    const fetchData = async () => {
+      try {
+        setState({ loading: false });
+        const cuarto = await client.fetch(`*[_type == 'cuarto']`);
+        // const images = await client.fetch(`*[_type == 'images']`);
+        // setimages(images);
+        console.log(cuarto);
+      } catch (error) {}
+    };
+    fetchData();
   }, []);
 
   return (

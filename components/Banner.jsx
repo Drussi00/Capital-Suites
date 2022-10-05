@@ -23,12 +23,16 @@ const Banner = () => {
           position: "absolute",
           fontFamily: "mont",
           fontStyle: "normal",
-          left: "50%",
-          transform: " translate(-50%, -50%)",
+          left: isDesktop ? "50%" : "30%",
+          transform: isDesktop
+            ? " translate(-50%, -50%)"
+            : " translate(-15%, -50%)",
 
           top: "35%",
           color: "white",
-          fontSize: isDesktop ? "5.5rem" : "2.2rem",
+          fontSize: isDesktop ? "5.5rem" : "2.8rem",
+          opacity: ".5",
+          textShadow: "2px 2px #ff0000",
         }}
         variant="h1"
         component="h1"

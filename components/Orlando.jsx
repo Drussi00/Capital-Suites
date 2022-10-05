@@ -48,48 +48,26 @@ const Orlando = () => {
           </Box>
 
           <Box display="flex" sx={{ paddingTop: "20px" }}>
-            <Grid container spacing={5}>
+            <Grid container spacing={5} sx={{ ml: 0 }}>
               <Grid item md={6}>
-                <FiberManualRecordIcon
-                  fontSize="small"
-                  sx={{ marginLeft: "40px" }}
-                />
-                7 Huespedes
+                <FiberManualRecordIcon fontSize="small" />7 Huespedes
               </Grid>
               <Grid item md={6}>
-                <FiberManualRecordIcon
-                  fontSize="small"
-                  sx={{ marginLeft: "40px" }}
-                />{" "}
-                2 baños
+                <FiberManualRecordIcon fontSize="small" /> 2 baños
               </Grid>
               <Grid item md={6}>
-                <FiberManualRecordIcon
-                  fontSize="small"
-                  sx={{ marginLeft: "40px" }}
-                />{" "}
-                2 habitaciones
+                <FiberManualRecordIcon fontSize="small" /> 2 habitaciones
               </Grid>
               <Grid item md={6}>
-                <FiberManualRecordIcon
-                  fontSize="small"
-                  sx={{ marginLeft: "40px" }}
-                />{" "}
-                5 camas
+                <FiberManualRecordIcon fontSize="small" /> 5 camas
               </Grid>
               <Grid item md={12}>
-                <FiberManualRecordIcon
-                  fontSize="small"
-                  sx={{ marginLeft: "40px" }}
-                />{" "}
-                A 15 minutos en carro de Disney World
+                <FiberManualRecordIcon fontSize="small" /> A 15 minutos en carro
+                de Disney World
               </Grid>
               <Grid item md={12}>
-                <FiberManualRecordIcon
-                  fontSize="small"
-                  sx={{ marginLeft: "40px" }}
-                />{" "}
-                A 30 minutos en carro de Universal Studios
+                <FiberManualRecordIcon fontSize="small" /> A 30 minutos en carro
+                de Universal Studios
               </Grid>
             </Grid>
           </Box>

@@ -91,16 +91,86 @@ export default function Layout({ title, description, children }) {
                   <MenuIcon sx={{ color: "white" }} />
                 </IconButton>
                 <Drawer
-                  sx={{
-                    maxWidth: "250px",
-                    backgroundColor: "white",
-                    zIndex: "1",
-                  }}
                   anchor="left"
                   open={sidbarVisible}
                   onClose={sidebarCloseHandler}
                 >
-                  <Box sx={{ width: "250px", backgroundColor: "white" }}></Box>
+                  <Box
+                    display="flex"
+                    justifyContent="center"
+                    flexDirection="column"
+                    sx={{ maxWidth: "350px" }}
+                  >
+                    <Box
+                      sx={{
+                        width: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <img
+                        src={logo.src}
+                        style={{
+                          display: "flex",
+
+                          width: "150px",
+                          height: "80px",
+                        }}
+                      />
+                    </Box>{" "}
+                    <Box display="flex">
+                      <NextLink href="/" passHref>
+                        <Link>
+                          <Typography
+                            variant="h1"
+                            component="h1"
+                            sx={classes.brand}
+                          >
+                            Nosotros
+                          </Typography>
+                        </Link>
+                      </NextLink>
+                    </Box>
+                    <Box display="flex">
+                      <NextLink href="/" passHref>
+                        <Link>
+                          <Typography
+                            variant="h1"
+                            component="h1"
+                            sx={classes.brand}
+                          >
+                            Suites
+                          </Typography>
+                        </Link>
+                      </NextLink>
+                    </Box>
+                    <Box display="flex">
+                      <NextLink href="/" passHref>
+                        <Link>
+                          <Typography
+                            variant="h1"
+                            component="h1"
+                            sx={classes.brand}
+                          >
+                            Reservar
+                          </Typography>
+                        </Link>
+                      </NextLink>
+                    </Box>
+                    <Box display="flex">
+                      <NextLink href="/" passHref>
+                        <Link>
+                          <Typography
+                            variant="h1"
+                            component="h1"
+                            sx={classes.brand}
+                          >
+                            Resort
+                          </Typography>
+                        </Link>
+                      </NextLink>
+                    </Box>{" "}
+                  </Box>
                 </Drawer>
                 <Box display={isDesktop ? "none" : null}>
                   <img
@@ -120,19 +190,6 @@ export default function Layout({ title, description, children }) {
                 justifyContent="space-around"
                 sx={{ width: "100%" }}
               >
-                <Box display="flex">
-                  <NextLink href="/" passHref>
-                    <Link>
-                      <Typography
-                        variant="h1"
-                        component="h1"
-                        sx={classes.brand}
-                      >
-                        Home
-                      </Typography>
-                    </Link>
-                  </NextLink>
-                </Box>
                 <Box display="flex">
                   <NextLink href="/" passHref>
                     <Link>
@@ -192,19 +249,6 @@ export default function Layout({ title, description, children }) {
                         sx={classes.brand}
                       >
                         Resort
-                      </Typography>
-                    </Link>
-                  </NextLink>
-                </Box>
-                <Box display="flex">
-                  <NextLink href="/" passHref>
-                    <Link>
-                      <Typography
-                        variant="h1"
-                        component="h1"
-                        sx={classes.brand}
-                      >
-                        Contacto
                       </Typography>
                     </Link>
                   </NextLink>

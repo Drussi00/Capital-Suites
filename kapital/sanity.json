@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "sanity-prueba-nuddy"
+    "name": "Kapital"
   },
   "api": {
-    "projectId": "lc3hxlnp",
+    "projectId": "8lpqpn4h",
     "dataset": "production"
   },
   "plugins": [

@@ -1,2 +1,2 @@
-const config = { projectId: "lc3hxlnp", dataset: "production" };
+const config = { projectId: "8lpqpn4h", dataset: "production" };
 export default config;
