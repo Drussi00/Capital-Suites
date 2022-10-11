@@ -8,7 +8,8 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link href="../styles/global.css" rel="stylesheet" />
+          <link href="../styles/global.css" rel="stylesheet" />{" "}
+          <link rel="shortut icon" href="favicon.ico" />
         </Head>
         <body>
           <Main />
