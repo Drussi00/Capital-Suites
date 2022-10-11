@@ -165,7 +165,7 @@ export default function Layout({ title, description, children }) {
                             component="h1"
                             sx={classes.brand}
                           >
-                            Resort
+                            Orlando Resort
                           </Typography>
                         </Link>
                       </NextLink>
@@ -248,7 +248,7 @@ export default function Layout({ title, description, children }) {
                         component="h1"
                         sx={classes.brand}
                       >
-                        Resort
+                        Orlando Resort
                       </Typography>
                     </Link>
                   </NextLink>

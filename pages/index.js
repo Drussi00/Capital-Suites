@@ -23,7 +23,9 @@ export default function Home() {
         // const images = await client.fetch(`*[_type == 'images']`);
         // setimages(images);
         console.log(cuarto);
-      } catch (error) {}
+      } catch (error) {
+        console.log(error);
+      }
     };
     fetchData();
   }, []);
