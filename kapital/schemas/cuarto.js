@@ -9,6 +9,11 @@ export default {
       type: "string",
     },
     {
+      name: "preciosLogin",
+      title: "PreciosLogin",
+      type: "number",
+    },
+    {
       name: "price",
       title: "Price",
       type: "number",

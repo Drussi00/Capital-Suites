@@ -42,10 +42,21 @@ body {
 .MuiGrid-root.MuiGrid-item.MuiGrid-grid-md-6.notPt {
   padding-top: 20px;
 }
+
+.MuiGrid-root.MuiGrid-item.MuiGrid-grid-md-12 {
+  padding-top: 20px;
+}
+
 .butLink {
   top: 80%;
-  left: 50%;
+  left: 45%;
   z-index: 1;
+}
+.MuiTypography-root.MuiTypography-text.MuiTypography-alignRight.lefty {
+  text-align: right;
+}
+.MuiGrid-root.MuiGrid-item.MuiGrid-grid-md-6 {
+  padding-top: 20px;
 }
 .small-images-container {
   display: flex;
@@ -124,6 +135,9 @@ body {
   background: black !important;
 }
 @media screen and (max-width: 600px) {
+  .MuiGrid-root.MuiGrid-item.MuiGrid-grid-sm-6.MuiGrid-grid-md-6.banos {
+    padding-left: 50px;
+  }
   .small-images-container {
     padding-left: 0;
   }

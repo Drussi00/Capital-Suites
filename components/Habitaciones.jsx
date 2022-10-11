@@ -31,6 +31,22 @@ const Habitaciones = ({ cuartosH }) => {
   const isDesktop = useMediaQuery("(min-width:600px)");
   return (
     <Container>
+      <Box
+        display="flex"
+        justifyContent="center"
+        sx={{ color: "white", fontweight: "bold" }}
+      >
+        {" "}
+        <Typography
+          variant="h1"
+          component="h1"
+          sx={{ fontSize: isDesktop ? "4rem" : "2rem" }}
+        >
+          {" "}
+          Nuestras Habitaciones{" "}
+        </Typography>
+      </Box>
+
       <Box>
         <Grid container spacing={6} sx={{ justifyContent: "center" }}>
           <Grid md={4} item>
@@ -79,7 +95,10 @@ const Habitaciones = ({ cuartosH }) => {
                     </Box>
                     <Box>
                       <Typography align="center" sx={{ fontSize: "0.9rem" }}>
-                        Noches a partir de {cuartosH[0].price}
+                        Noches a partir de $
+                        {new Intl.NumberFormat().format(
+                          parseInt(cuartosH[0].preciosLogin)
+                        )}
                       </Typography>
                     </Box>
                   </Box>
@@ -129,7 +148,10 @@ const Habitaciones = ({ cuartosH }) => {
                     </Box>
                     <Box>
                       <Typography align="center" sx={{ fontSize: "0.9rem" }}>
-                        Noches a partir de {cuartosH[0].price}
+                        Noches a partir de $
+                        {new Intl.NumberFormat().format(
+                          parseInt(cuartosH[1].preciosLogin)
+                        )}
                       </Typography>
                     </Box>
                   </Box>
@@ -179,7 +201,10 @@ const Habitaciones = ({ cuartosH }) => {
                     </Box>
                     <Box>
                       <Typography align="center" sx={{ fontSize: "0.9rem" }}>
-                        Noches a partir de 300.000
+                        Noches a partir de $
+                        {new Intl.NumberFormat().format(
+                          parseInt(cuartosH[2].preciosLogin)
+                        )}
                       </Typography>
                     </Box>
                   </Box>
@@ -230,7 +255,10 @@ const Habitaciones = ({ cuartosH }) => {
                     </Box>
                     <Box>
                       <Typography align="center" sx={{ fontSize: "0.9rem" }}>
-                        Noches a partir de {cuartosH[0].price}
+                        Noches a partir de $
+                        {new Intl.NumberFormat().format(
+                          parseInt(cuartosH[3].preciosLogin)
+                        )}
                       </Typography>
                     </Box>
                   </Box>
@@ -280,7 +308,10 @@ const Habitaciones = ({ cuartosH }) => {
                     </Box>
                     <Box>
                       <Typography align="center" sx={{ fontSize: "0.9rem" }}>
-                        Noches a partir de {cuartosH[0].price}
+                        Noches a partir de $
+                        {new Intl.NumberFormat().format(
+                          parseInt(cuartosH[4].preciosLogin)
+                        )}
                       </Typography>
                     </Box>
                   </Box>
@@ -301,7 +332,6 @@ const Habitaciones = ({ cuartosH }) => {
                     backgroundColor: "white",
                     borderRadius: "0",
                     width: isDesktop ? "100%" : "80%",
-
                     textTransform: "none",
                     fontWeight: "bold",
                     zIndex: 1,
@@ -314,7 +344,7 @@ const Habitaciones = ({ cuartosH }) => {
             <img
               style={{ position: "relative" }}
               src={cuartos}
-              width={isDesktop ? "800px" : "100%"}
+              width={"100%"}
               height="600px"
             />
           </Grid>

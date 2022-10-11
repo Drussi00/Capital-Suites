@@ -31,16 +31,17 @@ const Orlando = () => {
             justifyContent="center"
             sx={{ marginTop: "60px" }}
           >
-            <Typography variant="h1" component="h1">
+            <Typography variant="h1" component="h1" sx={{ mt: 0 }}>
               Welcome to Orlando
             </Typography>
           </Box>
           <Box
             display="flex"
             justifyContent="center"
-            sx={{ marginLeft: "22px", marginRight: "60px" }}
+            sx={{ marginLeft: "22px", marginRight: "60px", mb: 2 }}
+            className="lefty"
           >
-            <Typography variant="text" component="text" align="right">
+            <Typography variant="text" component="text" sx={{ pl: 5 }}>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industrys standard dummy text
               ever since the 1
@@ -48,17 +49,21 @@ const Orlando = () => {
           </Box>
 
           <Box display="flex" sx={{ paddingTop: "20px" }}>
-            <Grid container spacing={5} sx={{ ml: 0 }}>
-              <Grid item md={6}>
+            <Grid
+              container
+              spacing={5}
+              sx={{ ml: 0, fontSize: isDesktop ? "1.1rem" : ".8rem" }}
+            >
+              <Grid item md={6} sm={6}>
                 <FiberManualRecordIcon fontSize="small" />7 Huespedes
               </Grid>
-              <Grid item md={6}>
+              <Grid item md={6} sm={6} sx={{ pr: "20px" }} className="banos">
                 <FiberManualRecordIcon fontSize="small" /> 2 baños
               </Grid>
-              <Grid item md={6}>
+              <Grid item md={6} sm={6}>
                 <FiberManualRecordIcon fontSize="small" /> 2 habitaciones
               </Grid>
-              <Grid item md={6}>
+              <Grid item md={6} sm={6}>
                 <FiberManualRecordIcon fontSize="small" /> 5 camas
               </Grid>
               <Grid item md={12}>

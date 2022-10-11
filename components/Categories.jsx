@@ -32,22 +32,40 @@ export default function Categories() {
             display="flex"
             justifyContent="center"
             paddingBottom={6}
-            sx={{ color: "white", fontweight: "bold", width: "100%" }}
+            sx={{ color: "white", fontweight: "bold", width: "100%", p: 5 }}
           >
-            <Typography variant="text" component="text" align={"center"}>
-              hen an unknown printer took a galley of type and scrambled it to
-              make a type specimen book. It has survived not only five
-              centuries, but also the leap into electronic typesetting,
-              remaining essentially unchanged. It was popularised in the 1960s
-              with the release of Letraset sheets containing Lorem Ipsum
-              passages, and more recently with desktop publishing software like
-              Aldus PageMaker including versions of Lorem Ipsum. Why do we use
-              it? It is a long established fact that a reader will be distracted
-              by the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters, as opposed to using Content here, content
-              here, making it look like readable English.
-            </Typography>
+            {isDesktop ? (
+              <Typography variant="text" component="text" align={"left"}>
+                Bienvenidos a Kapital Suites Pereira Estamos ubicados en una
+                zona estratégica de la ciudad, a un lado del centro comercial
+                Pereira Plaza, iniciando la avenida Circunvalar, en donde la
+                vida nocturna es protagonista y caminar en el día es todo un
+                placer. Aquí estará cerca de restaurantes, centros comerciales,
+                bancos, iglesias, gimnasios, supermercados, entre muchos lugares
+                más. Cada una de nuestras habitaciones cuenta con una cocina
+                totalmente equipada, barra o mesa para comer, escritorio, aire
+                acondicionado, internet WIFI y demás comodidades. Contamos con
+                16 habitaciones y diferentes acomodaciones que van desde la
+                Estándar individual, hasta un completo apartamento de dos
+                habitaciones y con capacidad de alojar hasta a 8 personas. Cada
+                una de ellas tiene un diseño y distribución particular, pero
+                todas pensadas para ofrecerle ambientes agradables que lo hagan
+                sentir como en casa.
+              </Typography>
+            ) : (
+              <Typography variant="text" component="text" align={"left"}>
+                Bienvenidos a Kapital Suites Pereira Estamos ubicados en una
+                zona estratégica de la ciudad, a un lado del centro comercial
+                Pereira Plaza, iniciando la avenida Circunvalar. Aquí estará
+                cerca de restaurantes, centros comerciales, bancos, iglesias,
+                gimnasios y supermercados. Cada una de nuestras habitaciones
+                cuenta con una cocina totalmente equipada, barra o mesa para
+                comer, escritorio, aire acondicionado, internet WIFI y demás
+                comodidades. Contamos con 16 habitaciones y diferentes
+                acomodaciones que van desde la Estándar individual, hasta un
+                apartamento con capacidad de hasta 8 personas.
+              </Typography>
+            )}
           </Box>
         </Box>
         <Box>

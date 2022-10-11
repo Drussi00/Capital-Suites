@@ -16,6 +16,7 @@ import { urlFor } from "../../utils/image";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 export default function ProductScreen(props) {
   const { slug } = props;
+  const [index, setIndex] = useState(0);
   const [state, setState] = useState({
     cuarto: null,
     loading: true,
@@ -37,6 +38,9 @@ export default function ProductScreen(props) {
     };
     fetchData();
   }, [slug]);
+  useEffect(() => {
+    console.log(cuarto?.image);
+  });
   const img = cuarto?.image && urlFor(cuarto?.image[0]);
   return (
     <Layout title={"cuarto"}>
@@ -54,6 +58,23 @@ export default function ProductScreen(props) {
           {" "}
           <Grid item md={7}>
             <img src={img} width="100%" height="500px" />
+            <Box>
+              <div className="small-images-container">
+                {cuarto?.image?.map((item, i) => (
+                  <img
+                    key={item.key}
+                    width={300}
+                    height={300}
+                    alt={item.name}
+                    src={urlFor(item)}
+                    className={
+                      i === index ? "small-image selected-image" : "small-image"
+                    }
+                    onMouseEnter={() => setIndex(i)}
+                  />
+                ))}
+              </div>
+            </Box>
           </Grid>
           <Grid item md={4} width="100%">
             <Typography
