@@ -2,7 +2,9 @@
   font-family: cooper;
   src: url(./fonts/CooperFiveOpti-Black.otf);
 }
-
+body {
+  background-color: #ccae93 !important;
+}
 .MuiSvgIcon-root.MuiSvgIcon-fontSizeSmall {
   margin-right: 20px;
 }
@@ -34,7 +36,17 @@
 .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4.MuiAppBar-root.MuiAppBar-colorPrimary.MuiAppBar-positionStatic {
   display: inline;
 }
-
+.MuiContainer-root.MuiContainer-maxWidthLg.notMargin {
+  margin: 0;
+}
+.MuiGrid-root.MuiGrid-item.MuiGrid-grid-md-6.notPt {
+  padding-top: 20px;
+}
+.butLink {
+  top: 80%;
+  left: 50%;
+  z-index: 1;
+}
 .small-images-container {
   display: flex;
   gap: 10px;

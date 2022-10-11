@@ -22,6 +22,7 @@ export default {
         hotspot: true,
       },
     },
+
     {
       name: "description",
       title: "Description",

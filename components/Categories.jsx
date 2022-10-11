@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
+import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
 
 import first from "/utils/Images/1.jpg";
 import second from "/utils/Images/2.jpg";
@@ -117,21 +110,6 @@ export default function Categories() {
               </Grid>
             </Grid>
           </Grid>
-        </Box>
-        <Box display="flex" justifyContent="center" paddingTop={5}>
-          <Button
-            size="large"
-            sx={{
-              backgroundColor: "white",
-              borderRadius: "0",
-              width: isDesktop ? "20%" : "80%",
-
-              textTransform: "none",
-              fontWeight: "bold",
-            }}
-          >
-            Conoce mas
-          </Button>
         </Box>
       </Container>
     </div>

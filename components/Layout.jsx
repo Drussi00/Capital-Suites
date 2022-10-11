@@ -108,15 +108,16 @@ export default function Layout({ title, description, children }) {
                         justifyContent: "center",
                       }}
                     >
-                      <img
-                        src={logo.src}
-                        style={{
-                          display: "flex",
-
-                          width: "150px",
-                          height: "80px",
-                        }}
-                      />
+                      <NextLink href="/" passHref>
+                        <img
+                          src={logo.src}
+                          style={{
+                            display: "flex",
+                            width: "150px",
+                            height: "80px",
+                          }}
+                        />
+                      </NextLink>
                     </Box>{" "}
                     <Box display="flex">
                       <NextLink href="/" passHref>
@@ -132,7 +133,7 @@ export default function Layout({ title, description, children }) {
                       </NextLink>
                     </Box>
                     <Box display="flex">
-                      <NextLink href="/" passHref>
+                      <NextLink href="/#suites" passHref>
                         <Link>
                           <Typography
                             variant="h1"
@@ -173,15 +174,17 @@ export default function Layout({ title, description, children }) {
                   </Box>
                 </Drawer>
                 <Box display={isDesktop ? "none" : null}>
-                  <img
-                    src={logo.src}
-                    style={{
-                      display: "flex",
-                      marginLeft: isDesktop ? "0" : "80px",
-                      width: "150px",
-                      height: "80px",
-                    }}
-                  />
+                  <NextLink href="/" passHref>
+                    <img
+                      src={logo.src}
+                      style={{
+                        display: "flex",
+                        marginLeft: isDesktop ? "0" : "80px",
+                        width: "150px",
+                        height: "80px",
+                      }}
+                    />
+                  </NextLink>
                 </Box>
               </Box>
               <Box
@@ -217,15 +220,17 @@ export default function Layout({ title, description, children }) {
                   </NextLink>
                 </Box>
                 <Box>
-                  <img
-                    src={logo.src}
-                    style={{
-                      display: "flex",
-
-                      width: "150px",
-                      height: "80px",
-                    }}
-                  />
+                  <NextLink href="/" passHref>
+                    <img
+                      src={logo.src}
+                      style={{
+                        display: "flex",
+                        marginLeft: isDesktop ? "0" : "80px",
+                        width: "150px",
+                        height: "80px",
+                      }}
+                    />
+                  </NextLink>
                 </Box>
                 <Box display="flex">
                   <NextLink href="/" passHref>

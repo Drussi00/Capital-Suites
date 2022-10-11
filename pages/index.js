@@ -9,20 +9,17 @@ import client from "../utils/client";
 
 export default function Home() {
   const [state, setState] = useState({
-    products: [],
+    cuarto: [],
     error: "",
     loading: true,
   });
 
-  const { loading, error } = state;
+  const { loading, error, cuarto } = state;
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setState({ loading: false });
         const cuarto = await client.fetch(`*[_type == 'cuarto']`);
-        // const images = await client.fetch(`*[_type == 'images']`);
-        // setimages(images);
-        console.log(cuarto);
+        setState({ ...state, loading: false, cuarto });
       } catch (error) {
         console.log(error);
       }
@@ -55,7 +52,7 @@ export default function Home() {
               <Categories />
             </Box>
             <Box paddingTop={10}>
-              <Habitaciones />
+              <Habitaciones id="suites" cuartosH={cuarto} />
             </Box>
           </Box>
           <Box sx={{ backgroundColor: "white" }}>

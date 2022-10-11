@@ -1,27 +1,33 @@
 import {
   Box,
+  Button,
   Container,
   Grid,
   List,
   ListItem,
   Typography,
   useMediaQuery,
+  Link,
 } from "@mui/material";
-import React, { useState } from "react";
-import cuartos1 from "../utils/Images/Cuartos/1.jpg";
-import cuartos2 from "../utils/Images/Cuartos/2.jpg";
-import cuartos3 from "../utils/Images/Cuartos/3.jpg";
-import cuartos4 from "../utils/Images/Cuartos/4.jpg";
+import React, { useEffect, useState } from "react";
+import NextLink from "next/link";
+import { urlFor } from "../utils/image";
 
-const Habitaciones = () => {
+const Habitaciones = ({ cuartosH }) => {
+  useEffect(() => {
+    console.log(cuartosH[0].slug);
+  }, []);
+
   const [cuarto, setcuarto] = useState({
-    cuartos: cuartos1,
+    slug: cuartosH[0].slug.current,
+    cuartos: urlFor(cuartosH[0]?.image && cuartosH[0]?.image[0]),
     blanco1: true,
     blanco2: false,
     blanco3: false,
     blanco4: false,
+    blanco5: false,
   });
-  const { cuartos, blanco1, blanco2, blanco3, blanco4 } = cuarto;
+  const { cuartos, blanco1, blanco2, blanco3, blanco4, blanco5, slug } = cuarto;
   const isDesktop = useMediaQuery("(min-width:600px)");
   return (
     <Container>
@@ -29,16 +35,6 @@ const Habitaciones = () => {
         <Grid container spacing={6} sx={{ justifyContent: "center" }}>
           <Grid md={4} item>
             <List>
-              <ListItem>
-                <Typography sx={{ color: "white", fontSize: "0.8rem" }}>
-                  Descubre nuestras habitaciones
-                </Typography>
-              </ListItem>
-              <ListItem>
-                <Typography sx={{ color: "white", fontSize: "2rem" }}>
-                  Acabados de lugo
-                </Typography>
-              </ListItem>
               <ListItem
                 sx={{
                   backgroundColor: blanco1 ? "white" : null,
@@ -49,15 +45,23 @@ const Habitaciones = () => {
                   display="flex"
                   onMouseOver={() =>
                     setcuarto({
-                      cuartos: cuartos1,
+                      slug: cuartosH[0].slug.current,
+                      cuartos: urlFor(
+                        cuartosH[0]?.image && cuartosH[0]?.image[0]
+                      ),
                       blanco1: true,
                       blanco2: false,
                       blanco3: false,
                       blanco4: false,
+                      blanco5: false,
                     })
                   }
                 >
-                  <img src={cuartos1.src} height="100px" width="100px" />
+                  <img
+                    src={urlFor(cuartosH[0]?.image && cuartosH[0]?.image[0])}
+                    height="100px"
+                    width="50%"
+                  />
                   <Box
                     display="flex"
                     justifyContent={"center"}
@@ -70,12 +74,12 @@ const Habitaciones = () => {
                   >
                     <Box>
                       <Typography align="center" sx={{ fontWeight: "bold" }}>
-                        Classic Suite
+                        {cuartosH[0].name}
                       </Typography>
                     </Box>
                     <Box>
                       <Typography align="center" sx={{ fontSize: "0.9rem" }}>
-                        Noches a partir de 200.000
+                        Noches a partir de {cuartosH[0].price}
                       </Typography>
                     </Box>
                   </Box>
@@ -91,15 +95,23 @@ const Habitaciones = () => {
                   display="flex"
                   onMouseOver={() =>
                     setcuarto({
-                      cuartos: cuartos2,
+                      slug: cuartosH[1]?.slug?.current,
+                      cuartos: urlFor(
+                        cuartosH[1]?.image && cuartosH[1]?.image[0]
+                      ),
                       blanco1: false,
                       blanco2: true,
                       blanco3: false,
                       blanco4: false,
+                      blanco5: false,
                     })
                   }
                 >
-                  <img src={cuartos2.src} height="100px" width="100px" />
+                  <img
+                    src={urlFor(cuartosH[1]?.image && cuartosH[1]?.image[0])}
+                    height="100px"
+                    width="65%"
+                  />
                   <Box
                     display="flex"
                     justifyContent={"center"}
@@ -112,12 +124,12 @@ const Habitaciones = () => {
                   >
                     <Box>
                       <Typography align="center" sx={{ fontWeight: "bold" }}>
-                        Double Suite
+                        {cuartosH[1].name}
                       </Typography>
                     </Box>
                     <Box>
                       <Typography align="center" sx={{ fontSize: "0.9rem" }}>
-                        Noches a partir de 300.000
+                        Noches a partir de {cuartosH[0].price}
                       </Typography>
                     </Box>
                   </Box>
@@ -133,15 +145,23 @@ const Habitaciones = () => {
                   display="flex"
                   onMouseOver={() =>
                     setcuarto({
-                      cuartos: cuartos3,
+                      slug: cuartosH[2]?.slug?.current,
+                      cuartos: urlFor(
+                        cuartosH[2]?.image && cuartosH[2]?.image[0]
+                      ),
                       blanco1: false,
                       blanco2: false,
                       blanco3: true,
                       blanco4: false,
+                      blanco5: false,
                     })
                   }
                 >
-                  <img src={cuartos3.src} height="100px" width="100px" />
+                  <img
+                    src={urlFor(cuartosH[2]?.image && cuartosH[2]?.image[0])}
+                    height="100px"
+                    width="100px"
+                  />
                   <Box
                     display="flex"
                     justifyContent={"center"}
@@ -154,12 +174,12 @@ const Habitaciones = () => {
                   >
                     <Box>
                       <Typography align="center" sx={{ fontWeight: "bold" }}>
-                        Family Suite
+                        {cuartosH[2].name}
                       </Typography>
                     </Box>
                     <Box>
                       <Typography align="center" sx={{ fontSize: "0.9rem" }}>
-                        Noches a partir de 200.000
+                        Noches a partir de 300.000
                       </Typography>
                     </Box>
                   </Box>
@@ -175,15 +195,24 @@ const Habitaciones = () => {
                   display="flex"
                   onMouseOver={() =>
                     setcuarto({
-                      cuartos: cuartos4,
+                      slug: cuartosH[3]?.slug?.current,
+                      cuartos: urlFor(
+                        cuartosH[3]?.image && cuartosH[3]?.image[0]
+                      ),
                       blanco1: false,
                       blanco2: false,
                       blanco3: false,
                       blanco4: true,
+                      blanco5: false,
                     })
                   }
                 >
-                  <img src={cuartos4.src} height="100px" width="160px" />
+                  <img
+                    src={urlFor(cuartosH[3]?.image && cuartosH[3]?.image[0])}
+                    height="100px"
+                    width="100px"
+                    style={{ objectFit: "contain" }}
+                  />
                   <Box
                     display="flex"
                     justifyContent={"center"}
@@ -196,12 +225,62 @@ const Habitaciones = () => {
                   >
                     <Box>
                       <Typography align="center" sx={{ fontWeight: "bold" }}>
-                        Vip Suite
+                        {cuartosH[3].name}
                       </Typography>
                     </Box>
                     <Box>
                       <Typography align="center" sx={{ fontSize: "0.9rem" }}>
-                        Noches a partir de 200.000
+                        Noches a partir de {cuartosH[0].price}
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Box>
+              </ListItem>
+              <ListItem
+                sx={{
+                  backgroundColor: blanco5 ? "white" : null,
+                  color: blanco5 ? null : "white",
+                }}
+              >
+                <Box
+                  display="flex"
+                  onMouseOver={() =>
+                    setcuarto({
+                      slug: cuartosH[4]?.slug?.current,
+                      cuartos: urlFor(
+                        cuartosH[4]?.image && cuartosH[4]?.image[0]
+                      ),
+                      blanco1: false,
+                      blanco2: false,
+                      blanco3: false,
+                      blanco4: false,
+                      blanco5: true,
+                    })
+                  }
+                >
+                  <img
+                    src={urlFor(cuartosH[4]?.image && cuartosH[4]?.image[0])}
+                    height="100px"
+                    width="70%"
+                  />
+                  <Box
+                    display="flex"
+                    justifyContent={"center"}
+                    alignItems="center"
+                    sx={{
+                      width: "100%",
+                      flexDirection: "column",
+                      marginLeft: "30px",
+                    }}
+                  >
+                    <Box>
+                      <Typography align="center" sx={{ fontWeight: "bold" }}>
+                        {cuartosH[4].name}
+                      </Typography>
+                    </Box>
+                    <Box>
+                      <Typography align="center" sx={{ fontSize: "0.9rem" }}>
+                        Noches a partir de {cuartosH[0].price}
                       </Typography>
                     </Box>
                   </Box>
@@ -209,11 +288,34 @@ const Habitaciones = () => {
               </ListItem>
             </List>
           </Grid>
-          <Grid md={8} item>
+          <Grid md={8} item position="relative">
+            <NextLink
+              position="absolute"
+              href={`/habitaciones/${slug}`}
+              passHref
+            >
+              <Link position="absolute" className="butLink">
+                <Button
+                  size="large"
+                  sx={{
+                    backgroundColor: "white",
+                    borderRadius: "0",
+                    width: isDesktop ? "100%" : "80%",
+
+                    textTransform: "none",
+                    fontWeight: "bold",
+                    zIndex: 1,
+                  }}
+                >
+                  Conoce mas
+                </Button>{" "}
+              </Link>
+            </NextLink>
             <img
-              src={cuartos?.src}
+              style={{ position: "relative" }}
+              src={cuartos}
               width={isDesktop ? "800px" : "100%"}
-              height="553px"
+              height="600px"
             />
           </Grid>
         </Grid>
