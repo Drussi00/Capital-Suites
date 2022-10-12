@@ -71,6 +71,10 @@ body {
   height: 70px;
   cursor: pointer;
 }
+.MuiButtonBase-root.MuiListItem-root.MuiListItem-gutters.MuiListItem-padding.MuiListItem-button {
+  color: white;
+}
+
 .big-image {
   background-color: #f1f1f1;
   filter: drop-shadow(-2px 26px 18px rgba(0, 0, 0, 0.6));
@@ -78,7 +82,7 @@ body {
   padding-top: 20px;
 }
 .selected-image {
-  border: 1px solid black;
+  border: 1px solid white;
 }
 .left {
   display: inline-block;
@@ -88,7 +92,21 @@ body {
   border-radius: 50%;
   margin-right: 1.5em;
 }
-
+.dropdown-toggle.btn {
+  color: white;
+  padding-left: 0;
+  font-size: 1.3rem;
+}
+.MuiButtonBase-root.MuiListItem-root.MuiListItem-gutters.MuiListItem-padding.MuiListItem-button
+  :hover {
+  color: white;
+  text-decoration: underline;
+}
+.dropdown-menu.show {
+  color: white;
+  padding-left: 0;
+  font-size: 1.3rem;
+}
 .left:after {
   content: "";
   display: inline-block;
@@ -135,6 +153,11 @@ body {
   background: black !important;
 }
 @media screen and (max-width: 600px) {
+  .butLink {
+    top: 80%;
+    left: 35%;
+    z-index: 1;
+  }
   .MuiGrid-root.MuiGrid-item.MuiGrid-grid-sm-6.MuiGrid-grid-md-6.banos {
     padding-left: 50px;
   }

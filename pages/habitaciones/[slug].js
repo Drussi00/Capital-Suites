@@ -5,6 +5,7 @@ import {
   Grid,
   Typography,
   Divider,
+  useMediaQuery,
 } from "@mui/material";
 
 import { useEffect, useState } from "react";
@@ -15,6 +16,7 @@ import client from "../../utils/client";
 import { urlFor } from "../../utils/image";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 export default function ProductScreen(props) {
+  const isDesktop = useMediaQuery("(min-width:600px)");
   const { slug } = props;
   const [index, setIndex] = useState(0);
   const [state, setState] = useState({
@@ -38,10 +40,8 @@ export default function ProductScreen(props) {
     };
     fetchData();
   }, [slug]);
-  useEffect(() => {
-    console.log(cuarto?.image);
-  });
-  const img = cuarto?.image && urlFor(cuarto?.image[0]);
+
+  const img = cuarto?.image && urlFor(cuarto?.image[index]);
   return (
     <Layout title={"cuarto"}>
       {loading ? (
@@ -56,8 +56,12 @@ export default function ProductScreen(props) {
           sx={{ mt: 2, ml: 0, mr: 0 }}
         >
           {" "}
-          <Grid item md={7}>
-            <img src={img} width="100%" height="500px" />
+          <Grid item md={7} maxWidth="80%">
+            <img
+              src={img}
+              width="100%"
+              height={isDesktop ? "500px" : "300px"}
+            />
             <Box>
               <div className="small-images-container">
                 {cuarto?.image?.map((item, i) => (

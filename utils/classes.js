@@ -29,7 +29,7 @@ const classes = {
   },
   brand: {
     fontWeight: "bold",
-    fontSize: "1rem",
+    fontSize: "1.3rem",
     color: "white",
     fontFamily: " coolvetica, sans-serif!important",
   },

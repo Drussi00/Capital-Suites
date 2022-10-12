@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import Dropdown from "react-bootstrap/Dropdown";
 import logo from "../utils/Images/logo.png";
 import {
   AppBar,
@@ -11,6 +11,8 @@ import {
   Drawer,
   IconButton,
   Link,
+  ListItem,
+  ListItemText,
   ThemeProvider,
   Toolbar,
   Typography,
@@ -24,7 +26,8 @@ import classes from "../utils/classes";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import client from "../utils/client";
 
 ////////////////////////////////////////////////////////////////
 export default function Layout({ title, description, children }) {
@@ -66,6 +69,24 @@ export default function Layout({ title, description, children }) {
   const sidebarCloseHandler = () => {
     setSidebarVisible(false);
   };
+  const [state, setState] = useState({
+    cuarto: null,
+    loading: true,
+    error: "",
+  });
+  const { cuarto } = state;
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const cuarto = await client.fetch(`*[_type == 'cuarto']`);
+        setState({ ...state, loading: false, cuarto });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <>
       <Head>
@@ -133,19 +154,6 @@ export default function Layout({ title, description, children }) {
                       </NextLink>
                     </Box>
                     <Box display="flex">
-                      <NextLink href="/#suites" passHref>
-                        <Link>
-                          <Typography
-                            variant="h1"
-                            component="h1"
-                            sx={classes.brand}
-                          >
-                            Suites
-                          </Typography>
-                        </Link>
-                      </NextLink>
-                    </Box>
-                    <Box display="flex">
                       <NextLink href="/" passHref>
                         <Link>
                           <Typography
@@ -170,7 +178,55 @@ export default function Layout({ title, description, children }) {
                           </Typography>
                         </Link>
                       </NextLink>
-                    </Box>{" "}
+                    </Box>
+                    <Box display="flex">
+                      <Dropdown
+                        style={{
+                          zIndex: "100%",
+                          color: "white",
+                          "&:hover": { border: "none", color: "white" },
+                        }}
+                      >
+                        <Dropdown.Toggle
+                          sx={{ fontWeight: "bold", color: "white" }}
+                          variant=""
+                          id="dropdown-basic"
+                        >
+                          Suites
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu
+                          style={{
+                            backgroundColor: "black",
+                            border: "none",
+                            color: "white",
+                          }}
+                        >
+                          {cuarto?.map((category) => (
+                            <NextLink
+                              key={category}
+                              href={`/habitaciones/${category.slug.current}`}
+                              passHref
+                              sx={{}}
+                            >
+                              <ListItem
+                                button
+                                component="a"
+                                onClick={sidebarCloseHandler}
+                                sx={{
+                                  fontWeight: "normal",
+                                  "&:hover": { color: "black" },
+                                }}
+                              >
+                                <ListItemText
+                                  primary={category.name}
+                                ></ListItemText>
+                              </ListItem>
+                            </NextLink>
+                          ))}
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </Box>
                   </Box>
                 </Drawer>
                 <Box display={isDesktop ? "none" : null}>
@@ -207,17 +263,53 @@ export default function Layout({ title, description, children }) {
                   </NextLink>
                 </Box>
                 <Box display="flex">
-                  <NextLink href="/" passHref>
-                    <Link>
-                      <Typography
-                        variant="h1"
-                        component="h1"
-                        sx={classes.brand}
-                      >
-                        Suites
-                      </Typography>
-                    </Link>
-                  </NextLink>
+                  <Dropdown
+                    style={{
+                      zIndex: "100%",
+                      color: "white",
+                      "&:hover": { border: "none", color: "white" },
+                    }}
+                  >
+                    <Dropdown.Toggle
+                      sx={{ fontWeight: "bold", color: "white" }}
+                      variant=""
+                      id="dropdown-basic"
+                    >
+                      Suites
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu
+                      style={{
+                        backgroundColor: "black",
+                        width: "200px",
+                        border: "none",
+                        color: "white",
+                      }}
+                    >
+                      {cuarto?.map((category) => (
+                        <NextLink
+                          key={category}
+                          href={`/habitaciones/${category.slug.current}`}
+                          passHref
+                          sx={{}}
+                        >
+                          <ListItem
+                            button
+                            component="a"
+                            onClick={sidebarCloseHandler}
+                            sx={{
+                              fontWeight: "normal",
+                              "&:hover": { color: "black" },
+                            }}
+                          >
+                            <ListItemText
+                              primary={category.name}
+                            ></ListItemText>
+                          </ListItem>
+                        </NextLink>
+                      ))}
+                    </Dropdown.Menu>
+                  </Dropdown>
                 </Box>
                 <Box>
                   <NextLink href="/" passHref>
