@@ -17,6 +17,7 @@ import { Dropdown } from "react-bootstrap";
 
 const Habitaciones = ({ cuartosH }) => {
   const [cuarto, setcuarto] = useState({
+    nombre: cuartosH[0].name,
     slug: cuartosH[0].slug.current,
     cuartos: urlFor(cuartosH[0]?.image && cuartosH[0]?.image[0]),
     blanco1: true,
@@ -25,7 +26,8 @@ const Habitaciones = ({ cuartosH }) => {
     blanco4: false,
     blanco5: false,
   });
-  const { cuartos, blanco1, blanco2, blanco3, blanco4, blanco5, slug } = cuarto;
+  const { cuartos, blanco1, blanco2, blanco3, blanco4, blanco5, slug, nombre } =
+    cuarto;
   const isDesktop = useMediaQuery("(min-width:600px)");
 
   return (
@@ -358,7 +360,7 @@ const Habitaciones = ({ cuartosH }) => {
         </Box>
       ) : (
         <Box display="flex" justifyContent="center" flexDirection="column">
-          <Box display="flex" justifyContent="center" sx={{ mb: 10 }}>
+          <Box display="flex" justifyContent="center" sx={{}}>
             <Dropdown
               style={{
                 zIndex: "100%",
@@ -367,7 +369,8 @@ const Habitaciones = ({ cuartosH }) => {
               }}
             >
               <Dropdown.Toggle
-                sx={{ fontWeight: "bold", color: "white" }}
+                className="dropNot"
+                sx={{ fontWeight: "bold", color: "white", fontSize: "2.5rem" }}
                 variant=""
                 id="dropdown-basic"
               >
@@ -383,17 +386,17 @@ const Habitaciones = ({ cuartosH }) => {
                 }}
               >
                 {cuartosH?.map((category, i) => (
-                  <ListItem
+                  <Dropdown.Item
+                    style={{ color: "white" }}
                     key={i}
-                    button
                     onClick={() => {
                       setcuarto({
                         ...cuarto,
+                        nombre: cuartosH[i]?.name,
                         cuartos: urlFor(
                           cuartosH[i]?.image && cuartosH[i]?.image[i]
                         ),
                       });
-                      console.log("entro");
                     }}
                     sx={{
                       fontWeight: "normal",
@@ -401,10 +404,19 @@ const Habitaciones = ({ cuartosH }) => {
                     }}
                   >
                     <ListItemText primary={category.name}></ListItemText>
-                  </ListItem>
+                  </Dropdown.Item>
                 ))}
               </Dropdown.Menu>
             </Dropdown>
+          </Box>
+          <Box display="flex" justifyContent="center">
+            <Typography
+              variant="h1"
+              component="h1"
+              sx={{ color: "white", fontWeight: "bold", fontSize: "2.5rem" }}
+            >
+              {nombre}
+            </Typography>
           </Box>
           <Box position="relative" sx={{ mb: 10 }}>
             <NextLink

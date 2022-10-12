@@ -29,7 +29,7 @@ const Orlando = () => {
           <Box
             display="flex"
             justifyContent="center"
-            sx={{ marginTop: "60px" }}
+            sx={{ marginTop: isDesktop ? "60px" : 0 }}
           >
             <Typography variant="h1" component="h1" sx={{ mt: 0 }}>
               Welcome to Orlando

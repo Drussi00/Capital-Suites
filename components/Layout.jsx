@@ -22,10 +22,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Head from "next/head";
 import NextLink from "next/link";
 import classes from "../utils/classes";
-
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import EmailIcon from "@mui/icons-material/Email";
 import { useEffect, useState } from "react";
 import client from "../utils/client";
 
@@ -141,7 +140,7 @@ export default function Layout({ title, description, children }) {
                       </NextLink>
                     </Box>{" "}
                     <Box display="flex">
-                      <NextLink href="/" passHref>
+                      <NextLink href="/nosotros" passHref>
                         <Link>
                           <Typography
                             variant="h1"
@@ -250,7 +249,7 @@ export default function Layout({ title, description, children }) {
                 sx={{ width: "100%" }}
               >
                 <Box display="flex">
-                  <NextLink href="/" passHref>
+                  <NextLink href="/nosotros" passHref>
                     <Link>
                       <Typography
                         variant="h1"
@@ -376,9 +375,9 @@ export default function Layout({ title, description, children }) {
               textAlign: "center",
             }}
           >
-            <Box>
+            <Box sx={{ color: "white" }}>
               <Box>
-                <Typography align="justify">All rights reserved. </Typography>
+                <Typography align="justify">Derechos Reservados </Typography>
               </Box>
               <Box>
                 <Typography align="justify"> Kapital Suites.</Typography>
@@ -386,9 +385,18 @@ export default function Layout({ title, description, children }) {
             </Box>
             <Box>
               <Box display="flex" sx={{ justifyContent: "space-around" }}>
-                <WhatsAppIcon fontSize="large" sx={{ marginLeft: "20px" }} />
-                <InstagramIcon fontSize="large" sx={{ marginLeft: "20px" }} />
-                <EmailIcon fontSize="large" sx={{ marginLeft: "20px" }} />
+                <WhatsAppIcon
+                  fontSize="large"
+                  sx={{ marginLeft: "20px", color: "white" }}
+                />
+                <InstagramIcon
+                  fontSize="large"
+                  sx={{ marginLeft: "20px", color: "white" }}
+                />
+                <MailOutlineIcon
+                  fontSize="large"
+                  sx={{ marginLeft: "20px", color: "white" }}
+                />
               </Box>
             </Box>
           </Box>

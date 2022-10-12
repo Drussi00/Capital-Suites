@@ -158,6 +158,10 @@ body {
     left: 35%;
     z-index: 1;
   }
+  .dropNot.dropdown-toggle.btn {
+    font-size: 2rem;
+  }
+
   .MuiGrid-root.MuiGrid-item.MuiGrid-grid-sm-6.MuiGrid-grid-md-6.banos {
     padding-left: 50px;
   }

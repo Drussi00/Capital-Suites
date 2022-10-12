@@ -21,10 +21,11 @@ export default function ProductScreen(props) {
   const [index, setIndex] = useState(0);
   const [state, setState] = useState({
     cuarto: null,
+    desk: null,
     loading: true,
     error: "",
   });
-  const { cuarto, loading, error } = state;
+  const { cuarto, loading, error, desk } = state;
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -33,13 +34,15 @@ export default function ProductScreen(props) {
               *[_type == "cuarto" && slug.current == $slug][0]`,
           { slug }
         );
-        setState({ ...state, cuarto, loading: false });
+        const desk = isDesktop ? cuarto?.image : cuarto?.image?.slice(0, 4);
+
+        setState({ ...state, cuarto, loading: false, desk });
       } catch (err) {
         setState({ ...state, error: err.message, loading: false });
       }
     };
     fetchData();
-  }, [slug]);
+  }, [slug, isDesktop]);
 
   const img = cuarto?.image && urlFor(cuarto?.image[index]);
   return (
@@ -51,12 +54,30 @@ export default function ProductScreen(props) {
       ) : (
         <Grid
           container
-          spacing={4}
+          spacing={0}
           className="notMargin"
           sx={{ mt: 2, ml: 0, mr: 0 }}
         >
           {" "}
-          <Grid item md={7} maxWidth="80%">
+          <Grid
+            item
+            md={7}
+            xs={12}
+            sm={12}
+            pl={6}
+            pr={isDesktop ? 0 : 6}
+            maxWidth="100%"
+          >
+            <Box sx={{ display: isDesktop ? "none" : null }}>
+              <Typography
+                variant="h1"
+                component="h1"
+                sx={{ mt: 0, color: "white", fontSize: "3rem" }}
+              >
+                <strong>{cuarto?.name}</strong>
+              </Typography>
+            </Box>
+
             <img
               src={img}
               width="100%"
@@ -64,7 +85,7 @@ export default function ProductScreen(props) {
             />
             <Box>
               <div className="small-images-container">
-                {cuarto?.image?.map((item, i) => (
+                {desk?.map((item, i) => (
                   <img
                     key={item.key}
                     width={300}
@@ -80,14 +101,16 @@ export default function ProductScreen(props) {
               </div>
             </Box>
           </Grid>
-          <Grid item md={4} width="100%">
-            <Typography
-              variant="h1"
-              component="h1"
-              sx={{ mt: 0, color: "white", fontSize: "3rem" }}
-            >
-              <strong>{cuarto?.name}</strong>
-            </Typography>
+          <Grid item md={5} xs={12} sm={12} pl={6} pr={6}>
+            <Box sx={{ display: isDesktop ? null : "none" }}>
+              <Typography
+                variant="h1"
+                component="h1"
+                sx={{ mt: 0, color: "white", fontSize: "3rem" }}
+              >
+                <strong>{cuarto?.name}</strong>
+              </Typography>
+            </Box>
 
             <Divider />
             <Typography
@@ -104,8 +127,13 @@ export default function ProductScreen(props) {
               Aldus PageMaker including versions of Lorem Ipsum.
             </Typography>
             <Box
-              sx={{ p: 4, border: "5px solid white", color: "white", mt: 5 }}
-              width="100%"
+              sx={{
+                p: 4,
+                border: "5px solid white",
+                color: "white",
+                mt: 5,
+                maxWidth: "100%",
+              }}
             >
               <Typography variant="text" component="text" sx={{ mb: 10 }}>
                 <strong> Comodidades:</strong>{" "}
