@@ -93,6 +93,10 @@ const Orlando = () => {
                 backgroundColor: "#B18C6B",
                 width: "90%",
                 textTransform: "none",
+                "&:hover": {
+                  backgroundColor: "#B18C6B",
+                  transform: "scale(1.1, 1.1)",
+                },
               }}
             >
               Reserva Ahora

@@ -331,10 +331,14 @@ const Habitaciones = ({ cuartosH }) => {
                   sx={{
                     backgroundColor: "white",
                     borderRadius: "0",
-                    width: isDesktop ? "100%" : "80%",
+                    width: isDesktop ? "200px" : "80%",
                     textTransform: "none",
                     fontWeight: "bold",
                     zIndex: 1,
+                    "&:hover": {
+                      backgroundColor: "black",
+                      color: "white",
+                    },
                   }}
                 >
                   Conoce mas

@@ -53,6 +53,10 @@ const Banner = () => {
           backgroundColor: "#B18C6B",
           width: isDesktop ? "30%" : "70%",
           textTransform: "none",
+          "&:hover": {
+            backgroundColor: "#B18C6B",
+            transform: "translate(-50%, -45%)",
+          },
         }}
       >
         Reserva Ahora
