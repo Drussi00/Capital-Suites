@@ -55,7 +55,7 @@ const Banner = () => {
           textTransform: "none",
           "&:hover": {
             backgroundColor: "#B18C6B",
-            transform: "translate(-50%, -45%)",
+            textDecoration: "underline ",
           },
         }}
       >

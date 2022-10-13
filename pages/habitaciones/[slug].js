@@ -70,11 +70,18 @@ export default function ProductScreen(props) {
           >
             <Box sx={{ display: isDesktop ? "none" : null }}>
               <Typography
+                sx={{
+                  fontFamily: "mont",
+                  fontStyle: "normal",
+                  opacity: ".5",
+                  color: "white",
+                  fontSize: "3rem",
+                  textShadow: "1px 1px #ff0000",
+                }}
                 variant="h1"
                 component="h1"
-                sx={{ mt: 0, color: "white", fontSize: "3rem" }}
               >
-                <strong>{cuarto?.name}</strong>
+                {cuarto?.name}
               </Typography>
             </Box>
 
@@ -104,11 +111,18 @@ export default function ProductScreen(props) {
           <Grid item md={5} xs={12} sm={12} pl={6} pr={6}>
             <Box sx={{ display: isDesktop ? null : "none" }}>
               <Typography
+                sx={{
+                  fontFamily: "mont",
+                  fontStyle: "normal",
+                  opacity: ".5",
+                  color: "white",
+                  fontSize: "3rem",
+                  textShadow: "1px 1px #ff0000",
+                }}
                 variant="h1"
                 component="h1"
-                sx={{ mt: 0, color: "white", fontSize: "3rem" }}
               >
-                <strong>{cuarto?.name}</strong>
+                {cuarto?.name}
               </Typography>
             </Box>
 
@@ -118,13 +132,7 @@ export default function ProductScreen(props) {
               component="text"
               sx={{ mt: 1, color: "white" }}
             >
-              hen an unknown printer took a galley of type and scrambled it to
-              make a type specimen book. It has survived not only five
-              centuries, but also the leap into electronic typesetting,
-              remaining essentially unchanged. It was popularised in the 1960s
-              with the release of Letraset sheets containing Lorem Ipsum
-              passages, and more recently with desktop publishing software like
-              Aldus PageMaker including versions of Lorem Ipsum.
+              {cuarto?.description}
             </Typography>
             <Box
               sx={{

@@ -147,7 +147,9 @@ body {
   min-width: 670px;
   height: 670px;
 }
-
+.small-images-container {
+  padding-left: 0;
+}
 .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft {
   width: 230px;
   background: black !important;

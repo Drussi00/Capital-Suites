@@ -15,17 +15,20 @@ export default function Categories() {
       <Container justify="center" alignItems="center">
         <Box>
           <Box display="flex" justifyContent="center">
-            <Typography sx={{ color: "white", fontweight: "bold" }}>
-              Bienvenido a{" "}
-            </Typography>
-          </Box>
-          <Box display="flex" justifyContent="center">
             <Typography
+              sx={{
+                fontFamily: "mont",
+                fontStyle: "normal",
+                opacity: ".5",
+                color: "white",
+                fontSize: "3rem",
+
+                textShadow: "1px 1px #ff0000",
+              }}
               variant="h1"
               component="h1"
-              sx={{ color: "white", fontweight: "bold" }}
             >
-              Kapital Suites Pereira
+              Kapital Suites
             </Typography>
           </Box>
           <Box
