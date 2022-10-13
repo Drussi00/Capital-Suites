@@ -55,7 +55,7 @@ export default function Home() {
               <Habitaciones id="suites" cuartosH={cuarto} />
             </Box>
           </Box>
-          <Box sx={{ backgroundColor: "white", pb: 5 }}>
+          <Box id="orlando" sx={{ backgroundColor: "white", pb: 5 }}>
             <Orlando />
           </Box>
         </Box>

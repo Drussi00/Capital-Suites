@@ -71,10 +71,15 @@ body {
   height: 70px;
   cursor: pointer;
 }
+.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium {
+  background: transparent;
+}
 .MuiButtonBase-root.MuiListItem-root.MuiListItem-gutters.MuiListItem-padding.MuiListItem-button {
   color: white;
 }
-
+.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButtonBase-root:hover {
+  color: white;
+}
 .big-image {
   background-color: #f1f1f1;
   filter: drop-shadow(-2px 26px 18px rgba(0, 0, 0, 0.6));

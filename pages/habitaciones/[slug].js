@@ -146,24 +146,43 @@ export default function ProductScreen(props) {
               <Typography variant="text" component="text" sx={{ mb: 10 }}>
                 <strong> Comodidades:</strong>{" "}
               </Typography>
+
               <Grid container spacing={5} mt={1}>
                 <Grid item md={6} className="notPt">
-                  <FiberManualRecordIcon fontSize="" /> Cocina
+                  {cuarto?.comodidad1 ? (
+                    <FiberManualRecordIcon fontSize="" />
+                  ) : null}{" "}
+                  {cuarto?.comodidad1}
                 </Grid>
                 <Grid item md={6} className="notPt">
-                  <FiberManualRecordIcon fontSize="" /> Cocina Plancha
+                  {cuarto?.comodidad2 ? (
+                    <FiberManualRecordIcon fontSize="" />
+                  ) : null}{" "}
+                  {cuarto?.comodidad2}
                 </Grid>
                 <Grid item md={6} className="notPt">
-                  <FiberManualRecordIcon fontSize="" /> Cocina Bano
+                  {cuarto?.comodidad3 ? (
+                    <FiberManualRecordIcon fontSize="" />
+                  ) : null}{" "}
+                  {cuarto?.comodidad3}
                 </Grid>
                 <Grid item md={6} className="notPt">
-                  <FiberManualRecordIcon fontSize="" /> CocinaTelevisor
+                  {cuarto?.comodidad4 ? (
+                    <FiberManualRecordIcon fontSize="" />
+                  ) : null}{" "}
+                  {cuarto?.comodidad4}
                 </Grid>
                 <Grid item md={6} className="notPt">
-                  <FiberManualRecordIcon fontSize="" /> Cocina Caja Fuerte
+                  {cuarto?.comodidad5 ? (
+                    <FiberManualRecordIcon fontSize="" />
+                  ) : null}{" "}
+                  {cuarto?.comodidad5}
                 </Grid>
                 <Grid item md={6} className="notPt">
-                  <FiberManualRecordIcon fontSize="" /> Cocina Escritorio
+                  {cuarto?.comodidad6 ? (
+                    <FiberManualRecordIcon fontSize="" />
+                  ) : null}{" "}
+                  {cuarto?.comodidad6}
                 </Grid>
               </Grid>
             </Box>

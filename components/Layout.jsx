@@ -27,7 +27,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { useEffect, useState } from "react";
 import client from "../utils/client";
-
+import FacebookIcon from "@mui/icons-material/Facebook";
 ////////////////////////////////////////////////////////////////
 export default function Layout({ title, description, children }) {
   const theme = createTheme({
@@ -153,7 +153,10 @@ export default function Layout({ title, description, children }) {
                       </NextLink>
                     </Box>
                     <Box display="flex">
-                      <NextLink href="/" passHref>
+                      <NextLink
+                        href="https://wa.me/message/NK5A4TBMMGBZA1"
+                        passHref
+                      >
                         <Link>
                           <Typography
                             variant="h1"
@@ -166,7 +169,7 @@ export default function Layout({ title, description, children }) {
                       </NextLink>
                     </Box>
                     <Box display="flex">
-                      <NextLink href="/" passHref>
+                      <NextLink href="#orlando" passHref>
                         <Link>
                           <Typography
                             variant="h1"
@@ -324,7 +327,10 @@ export default function Layout({ title, description, children }) {
                   </NextLink>
                 </Box>
                 <Box display="flex">
-                  <NextLink href="/" passHref>
+                  <NextLink
+                    href="https://wa.me/message/NK5A4TBMMGBZA1"
+                    passHref
+                  >
                     <Link>
                       <Typography
                         variant="h1"
@@ -337,7 +343,7 @@ export default function Layout({ title, description, children }) {
                   </NextLink>
                 </Box>
                 <Box display="flex">
-                  <NextLink href="/" passHref>
+                  <NextLink href="#orlando" passHref>
                     <Link>
                       <Typography
                         variant="h1"
@@ -385,18 +391,56 @@ export default function Layout({ title, description, children }) {
             </Box>
             <Box>
               <Box display="flex" sx={{ justifyContent: "space-around" }}>
-                <WhatsAppIcon
-                  fontSize="large"
-                  sx={{ marginLeft: "20px", color: "white" }}
-                />
-                <InstagramIcon
-                  fontSize="large"
-                  sx={{ marginLeft: "20px", color: "white" }}
-                />
-                <MailOutlineIcon
-                  fontSize="large"
-                  sx={{ marginLeft: "20px", color: "white" }}
-                />
+                <NextLink
+                  href="https://www.facebook.com/hotelkapitalsuites"
+                  passHref
+                >
+                  <IconButton
+                    aria-label="Example"
+                    sx={{ backgroundColor: "transparent" }}
+                  >
+                    <FacebookIcon
+                      fontSize="large"
+                      sx={{ marginLeft: "20px", color: "white" }}
+                    />
+                  </IconButton>
+                </NextLink>
+                <NextLink href="https://wa.me/message/NK5A4TBMMGBZA1" passHref>
+                  <IconButton
+                    aria-label="Example"
+                    sx={{ backgroundColor: "transparent" }}
+                  >
+                    <WhatsAppIcon
+                      fontSize="large"
+                      sx={{ marginLeft: "20px", color: "white" }}
+                    />
+                  </IconButton>
+                </NextLink>
+                <NextLink
+                  href="https://www.instagram.com/kapitalsuites/"
+                  passHref
+                >
+                  <IconButton
+                    aria-label="Example"
+                    sx={{ backgroundColor: "transparent" }}
+                  >
+                    <InstagramIcon
+                      fontSize="large"
+                      sx={{ marginLeft: "20px", color: "white" }}
+                    />
+                  </IconButton>
+                </NextLink>
+                <NextLink href="mailto:Kapitalsuites@gmail.com" passHref>
+                  <IconButton
+                    aria-label="Example"
+                    sx={{ backgroundColor: "transparent" }}
+                  >
+                    <MailOutlineIcon
+                      fontSize="large"
+                      sx={{ marginLeft: "20px", color: "white" }}
+                    />
+                  </IconButton>
+                </NextLink>
               </Box>
             </Box>
           </Box>
