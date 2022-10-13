@@ -418,9 +418,17 @@ const Habitaciones = ({ cuartosH }) => {
           </Box>
           <Box display="flex" justifyContent="center">
             <Typography
+              sx={{
+                fontFamily: "mont",
+                fontStyle: "normal",
+
+                color: "white",
+                fontSize: isDesktop ? "4rem" : "2rem",
+                opacity: ".5",
+                textShadow: "2px 2px #ff0000",
+              }}
               variant="h1"
               component="h1"
-              sx={{ color: "white", fontWeight: "bold", fontSize: "2.5rem" }}
             >
               {nombre}
             </Typography>
