@@ -6,24 +6,52 @@ import {
   Button,
   useMediaQuery,
 } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import orlando from "../utils/Images/orlando.png";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import o1 from "../utils/Images/orlando/O1.jpg";
+import o2 from "../utils/Images/orlando/O2.jpg";
+import o3 from "../utils/Images/orlando/O3.jpeg";
+import o4 from "../utils/Images/orlando/O4.jpeg";
+import o5 from "../utils/Images/orlando/O5.jpeg";
+import o6 from "../utils/Images/orlando/O6.jpeg";
 const Orlando = () => {
+  const [index, setIndex] = useState(0);
+  const [arr, setarr] = useState([]);
+  useEffect(() => {
+    setarr(
+      isDesktop ? [orlando, o1, o2, o3, o4, o5, o6] : [orlando, o1, o2, o3]
+    );
+  }, []);
+  console.log(arr);
   const isDesktop = useMediaQuery("(min-width:600px)");
   return (
     <Container>
       <Grid container>
-        <Grid item md={6} display="flex" justify="center">
+        <Grid item md={6}>
           <img
-            src={orlando.src}
-            style={{
-              margin: isDesktop ? "60px" : "0",
-              width: isDesktop ? "600px" : "100%",
-              height: "420px",
-            }}
+            src={arr[index]?.src}
+            width="100%"
+            height={isDesktop ? "400px" : "300px"}
           />
+          <Box>
+            <div className="small-images-container">
+              {arr?.map((item, i) => (
+                <img
+                  key={item.key}
+                  width={300}
+                  height={300}
+                  alt={item.name}
+                  src={item?.src}
+                  className={
+                    i === index ? "small-image selected-image" : "small-image"
+                  }
+                  onMouseEnter={() => setIndex(i)}
+                />
+              ))}
+            </div>
+          </Box>
         </Grid>
         <Grid item md={6}>
           <Box

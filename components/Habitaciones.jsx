@@ -87,7 +87,7 @@ const Habitaciones = ({ cuartosH }) => {
                     <img
                       src={urlFor(cuartosH[0]?.image && cuartosH[0]?.image[0])}
                       height="100px"
-                      width="50%"
+                      width="100px"
                     />
                     <Box
                       display="flex"
@@ -140,7 +140,7 @@ const Habitaciones = ({ cuartosH }) => {
                     <img
                       src={urlFor(cuartosH[1]?.image && cuartosH[1]?.image[0])}
                       height="100px"
-                      width="65%"
+                      width="100px"
                     />
                     <Box
                       display="flex"
@@ -300,7 +300,7 @@ const Habitaciones = ({ cuartosH }) => {
                     <img
                       src={urlFor(cuartosH[4]?.image && cuartosH[4]?.image[0])}
                       height="100px"
-                      width="70%"
+                      width="100px"
                     />
                     <Box
                       display="flex"

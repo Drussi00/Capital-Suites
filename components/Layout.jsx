@@ -370,7 +370,7 @@ export default function Layout({ title, description, children }) {
           <Divider sx={{ color: "black", opacity: "1" }} />
           <Box
             display="flex"
-            justifyContent={"space-between"}
+            justifyContent={isDesktop ? "space-between" : "center"}
             component="footer"
             sx={{
               paddingRight: isDesktop ? "50px" : "30px",
@@ -382,15 +382,15 @@ export default function Layout({ title, description, children }) {
             }}
           >
             <Box sx={{ color: "white" }}>
-              <Box>
+              <Box display={isDesktop ? null : "none"}>
                 <Typography align="justify">Derechos Reservados </Typography>
               </Box>
-              <Box>
+              <Box display={isDesktop ? null : "none"}>
                 <Typography align="justify"> Kapital Suites.</Typography>
               </Box>
             </Box>
             <Box>
-              <Box display="flex" sx={{ justifyContent: "space-around" }}>
+              <Box display="flex" sx={{ justifyContent: "space-beetwen" }}>
                 <NextLink
                   href="https://www.facebook.com/hotelkapitalsuites"
                   passHref
