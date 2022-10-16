@@ -3,6 +3,7 @@ import React from "react";
 import principal from "../utils/Images/principal.png";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import NextLink from "next/link";
+import Image from "next/image";
 const Banner = () => {
   const isDesktop = useMediaQuery("(min-width:600px)");
   return (
@@ -12,12 +13,10 @@ const Banner = () => {
       }}
     >
       {" "}
-      <img
+      <Image
+        width="2000px"
+        height={isDesktop ? "1000px" : "3000px"}
         src={principal.src}
-        style={{
-          width: "100%",
-          height: isDesktop ? "50vw" : "500px",
-        }}
       />
       <Typography
         sx={{
